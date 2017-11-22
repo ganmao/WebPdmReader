@@ -60,5 +60,3 @@ LogPath = logs          日志目录
 * 展示模板
     AdminLTE
 
-## 下载地址
-http://rnd-isourceb.huawei.com/z00361528/WebPdmReader/releases
