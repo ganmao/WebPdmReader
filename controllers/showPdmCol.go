@@ -1,7 +1,7 @@
 package controllers
 
 import (
-	"WPdmReader/lib"
+	"WebPdmReader/lib"
 
 	"github.com/astaxie/beego"
 )
@@ -16,10 +16,10 @@ func (this *ShowPdmController) Get() {
 	if err == nil {
 		beego.Debug("GET PdmPath : ", pdmPath)
 	}
-	WRPLibs.Check(err)
+	WPRLibs.Check(err)
 
-	fList, err := WRPLibs.ListDir(pdmPath.(string), "pdm")
-	WRPLibs.Check(err)
+	fList, err := WPRLibs.ListDir(pdmPath.(string), "pdm")
+	WPRLibs.Check(err)
 
 	// 数据赋值
 	// --- contents

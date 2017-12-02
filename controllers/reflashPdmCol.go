@@ -1,7 +1,7 @@
 package controllers
 
 import (
-	"WPdmReader/lib"
+	"WebPdmReader/lib"
 
 	"github.com/astaxie/beego"
 )
@@ -14,7 +14,7 @@ func (this *PdmManager) Get() {
 	var inputMngCmd string = ""
 	var IsNeedSubmit bool = true
 	var IsCmdOutput bool = false
-	var refreshLog []WRPLibs.RefreshPdmLog
+	var refreshLog []WPRLibs.RefreshPdmLog
 	this.Ctx.Input.Bind(&inputMngCmd, "cmd")
 
 	// TODO:form会传入但代码暂未获取IdxPath，PdmPath；等有需求再实现
@@ -22,16 +22,16 @@ func (this *PdmManager) Get() {
 	if err == nil {
 		beego.Debug("GET IdxPath : ", idxPath)
 	}
-	WRPLibs.Check(err)
+	WPRLibs.Check(err)
 
 	pdmPath, err := beego.GetConfig("String", "PdmPath", "data/idx")
 	if err == nil {
 		beego.Debug("GET PdmPath : ", pdmPath)
 	}
-	WRPLibs.Check(err)
+	WPRLibs.Check(err)
 
 	if inputMngCmd == "refresh" {
-		refreshLog = WRPLibs.RefreshPdmTableIdx(pdmPath.(string), idxPath.(string))
+		refreshLog = WPRLibs.RefreshPdmTableIdx(pdmPath.(string), idxPath.(string))
 		IsCmdOutput = true
 		IsNeedSubmit = false
 	}

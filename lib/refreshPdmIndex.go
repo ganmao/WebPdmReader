@@ -1,4 +1,4 @@
-package WRPLibs
+package WPRLibs
 
 import (
 	"encoding/xml"

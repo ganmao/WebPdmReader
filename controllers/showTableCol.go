@@ -1,7 +1,7 @@
 package controllers
 
 import (
-	"WPdmReader/lib"
+	"WebPdmReader/lib"
 
 	"github.com/astaxie/beego"
 )
@@ -35,11 +35,11 @@ func (this *ShowTabController) Get() {
 		// TODO:看一下这两个替换进行优化
 		tabIdxPath, err := beego.GetConfig("String", "IdxPath", "data/idx")
 		beego.Debug("GET Config IdxPath : ", tabIdxPath)
-		WRPLibs.Check(err)
-		pdmIdxFile := tabIdxPath.(string) + WRPLibs.PATH_SPLIT + pdmFileName + ".xml"
+		WPRLibs.Check(err)
+		pdmIdxFile := tabIdxPath.(string) + WPRLibs.PATH_SPLIT + pdmFileName + ".xml"
 		beego.Debug("Set Index File Name : ", pdmIdxFile)
 
-		tables := WRPLibs.ReadPdmIdxFile(pdmIdxFile)
+		tables := WPRLibs.ReadPdmIdxFile(pdmIdxFile)
 
 		/* 模板赋值 */
 		// --- contents

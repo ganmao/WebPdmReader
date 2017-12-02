@@ -1,7 +1,7 @@
 package routers
 
 import (
-	"WPdmReader/controllers"
+	"WebPdmReader/controllers"
 
 	"github.com/astaxie/beego"
 )

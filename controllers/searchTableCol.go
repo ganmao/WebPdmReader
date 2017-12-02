@@ -1,7 +1,7 @@
 package controllers
 
 import (
-	"WPdmReader/lib"
+	"WebPdmReader/lib"
 	"strings"
 
 	"github.com/astaxie/beego"
@@ -17,15 +17,15 @@ func (this *SearchTable) Get() {
 	if err == nil {
 		beego.Debug("GET IdxPath : ", tabIdxPath)
 	}
-	WRPLibs.Check(err)
-	tabIdxFile := tabIdxPath.(string) + WRPLibs.PATH_SPLIT + "idx_tab.xml"
+	WPRLibs.Check(err)
+	tabIdxFile := tabIdxPath.(string) + WPRLibs.PATH_SPLIT + "idx_tab.xml"
 
 	beego.Debug("tabIdxFile = ", tabIdxFile)
-	allIndexs := WRPLibs.ReadTabIdxFile(tabIdxFile)
+	allIndexs := WPRLibs.ReadTabIdxFile(tabIdxFile)
 
 	// 根据传入表名过滤
 	var inputTableName string
-	var indexs []WRPLibs.SearchIndexStruct
+	var indexs []WPRLibs.SearchIndexStruct
 	this.Ctx.Input.Bind(&inputTableName, "tn")
 	inputTableName = strings.ToUpper(inputTableName)
 	if inputTableName != "" {
