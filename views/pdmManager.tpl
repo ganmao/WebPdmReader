@@ -36,19 +36,45 @@
       {{range $index, $log := $.refreshLog}}
       <!-- timeline item -->
       <li>
-        <i class="fa fa-hourglass-half bg-yellow"></i>
+        <i class="fa fa-refresh bg-yellow"></i>
 
         <div class="timeline-item">
-          <span class="time"><i class="fa fa-clock-o"></i> {{$log.RefreshTime.Format "2006-01-02 15:04:05"}}</span>
-
-          <h3 class="timeline-header"><b>Refresh File</b> {{$log.RefreshFileName}}</h3>
-
+          <span class="time"><i class="fa fa-clock-o"></i> {{$log.UpdateTime.Format "2006-01-02 15:04:05"}}</span>
+          <h3 class="timeline-header"><b>Refresh File</b> {{$log.UpdateFileName}}</h3>
           <div class="timeline-body">
-            <b>Refresh File Name</b> {{$log.RefreshTabNum}}<br>
-            <b>Refresh File Column Counts</b> {{$log.RefreshTabColumns}}<br>
-            <b>Refresh File Size</b> {{$log.RefreshStatus.Size}}<br>
-            <b>Refresh File Mode</b> {{$log.RefreshStatus.Mode}}<br>
-            <b>Refresh File ModTime</b> {{$log.RefreshStatus.ModTime}}<br>
+          
+              <!-- box -->
+              <div class="box">
+                <div class="box-body no-padding">
+                  <table class="table table-striped">
+                    <tr>
+                      <th>Title</th>
+                      <th>Detail</th>
+                    </tr>
+                    <tr>
+                      <td>File Name</td>
+                      <td>{{$log.UpdateTabNum}}</td>
+                    </tr>
+                    <tr>
+                      <td>File Column Counts</td>
+                      <td>{{$log.UpdateTabColNum}}</td>
+                    </tr>
+                    <tr>
+                      <td>File Size</td>
+                      <td>{{$log.UpdateFileStatus.Size}}</td>
+                    </tr>
+                    <tr>
+                      <td>File Mode</td>
+                      <td>{{$log.UpdateFileStatus.Mode}}</td>
+                    </tr>
+                    <tr>
+                      <td>File ModTime</td>
+                      <td>{{$log.UpdateFileStatus.ModTime.Format "2006-01-02 15:04:05"}}</td>
+                    </tr>
+                  </table>
+                </div>
+                <!-- /.box-body -->
+              </div>
           </div>
           <div class="timeline-footer">
               <div class="callout callout-success">
