@@ -64,7 +64,7 @@
         <thead>
           <tr>
             <th>ID</th>
-            <th>          Name          </th>
+            <th>Name</th>
             <th>Code</th>
             <th>Type</th>
             <th>PK</th>
@@ -100,7 +100,7 @@
         <tfoot>
           <tr>
             <th>ID</th>
-            <th>          Name          </th>
+            <th>Name</th>
             <th>Code</th>
             <th>Type</th>
             <th>PK</th>
