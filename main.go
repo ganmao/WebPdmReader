@@ -12,20 +12,19 @@ func main() {
 	logLevel, err := beego.GetConfig("String", "logLevel", "error")
 	WPRLibs.Check(err)
 
-	logPath, err := beego.GetConfig("String", "LogPath", "logs")
-	WPRLibs.Check(err)
-
-	logfile := `{"filename":"` + logPath.(string) + WPRLibs.PATH_SPLIT + `WPdmReader.log"}`
-
-	beego.SetLogger("file", logfile)
+	// TODO: 如何将这个日志的路径和文件名采用变量传入？
+	beego.SetLogger("file", `{"filename":"logs/WPdmReader.log","level":5,"maxlines":0,"maxsize":20,"daily":true,"maxdays":10}`)
+	beego.SetLogFuncCall(false)
 
 	switch logLevel {
 	case "error":
 		beego.SetLevel(beego.LevelError)
+		beego.SetLogFuncCall(true)
 	case "info":
 		beego.SetLevel(beego.LevelInformational)
 	case "debug":
 		beego.SetLevel(beego.LevelDebug)
+		beego.SetLogFuncCall(true)
 	default:
 		beego.SetLevel(beego.LevelError)
 	}
