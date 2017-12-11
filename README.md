@@ -1,5 +1,5 @@
 # WebPdmReader
-PowerDesigner file reader tools for web
+PowerDesigner's file (PDM) reader tool for web display.
 
 # PowerDesigner WEB方式共享查询工具
 
@@ -59,4 +59,7 @@ LogPath = logs          日志目录
 
 * 展示模板
     AdminLTE
+    
+ ## 联系方式
+ zdl0812@163.com
 
